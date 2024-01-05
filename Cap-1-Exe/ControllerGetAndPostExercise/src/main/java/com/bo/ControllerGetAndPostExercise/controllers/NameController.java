@@ -1,4 +1,4 @@
-package com.bo.ControllerGetAndPostExercise;
+package com.bo.ControllerGetAndPostExercise.controllers;
 
 import org.springframework.web.bind.annotation.*;
 
