@@ -15,4 +15,12 @@ public class HelloWorldControllelr {
         return "Hello " + nome + " " + cognome;
     }
 
+    @GetMapping(path = "/ciao/{id}")
+    public User ciao(
+            @PathVariable long id,
+            @RequestParam(value = "pippo", required = false, defaultValue = "Bruno") String nome,
+            @RequestParam(required = false) String cognome){
+        return new User(id, nome, cognome);
+    }
+
 }
