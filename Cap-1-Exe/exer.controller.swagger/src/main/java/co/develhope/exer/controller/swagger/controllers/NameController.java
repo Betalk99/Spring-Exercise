@@ -7,14 +7,14 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/v1")
+@RequestMapping("/v1/names")
 public class NameController {
 
     private String reverseName(String name){
         return new StringBuilder(name).reverse().toString();
     }
 
-    @GetMapping("/echo")
+    @GetMapping("/echo/normal")
     @Tag(name = "echo", description = "Get del nome dato tramite parametro")
     @ApiResponse(description = "OK", responseCode = "200")
     @ApiResponse(description = "KO", responseCode = "400")
@@ -24,7 +24,7 @@ public class NameController {
         return name;
     }
 
-    @PostMapping("/echo")
+    @PostMapping("/echo/reverse")
     @Tag(name = "echo", description = "Post del nome in reverse dato tramite parametro")
     @ApiResponse(description = "OK", responseCode = "200")
     @ApiResponse(description = "KO", responseCode = "400")
