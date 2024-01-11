@@ -10,7 +10,8 @@ public class Controller {
     public User ciao(
             @PathVariable String pro,
             @RequestParam(value = "nome") String nome){
-        return new User(nome, pro);
+        String saluto = "Ciao " + nome + ", com'è il tempo in " + pro +"?";
+        return new User(nome, pro, saluto);
     }
 
 

@@ -1,11 +1,11 @@
 package com.example.brunoOrl.ControllerconGETcompleta;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.lang.NonNull;
 @NoArgsConstructor
-@AllArgsConstructor
-
+@Data
 public class User {
     @NonNull
     private String nome;
@@ -15,10 +15,10 @@ public class User {
     private String saluto;
 
 
-    public User(String nome, String provincia) {
+    public User(String nome, String provincia, String saluto) {
         this.nome = nome;
         this.provincia = provincia;
-        this.saluto = "Ciao " + nome + ", com'è il tempo in " + provincia +"?";;
+        this.saluto = saluto;
     }
 
     @NonNull
