@@ -25,7 +25,7 @@ public class NameController {
     }
 
     @PostMapping("/echo/reverse")
-    @Tag(name = "echo", description = "Post del nome in reverse dato tramite parametro")
+    @Tag(name = "echo")
     @ApiResponse(description = "OK", responseCode = "200")
     @ApiResponse(description = "KO", responseCode = "400")
     @ApiResponse(description = "BOH", responseCode = "500")

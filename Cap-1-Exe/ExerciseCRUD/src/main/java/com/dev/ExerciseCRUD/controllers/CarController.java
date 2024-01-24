@@ -3,6 +3,7 @@ package com.dev.ExerciseCRUD.controllers;
 import com.dev.ExerciseCRUD.entities.Car;
 import com.dev.ExerciseCRUD.repositories.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,7 @@ import java.util.Optional;
 public class CarController {
 
     @Autowired
+
     private CarRepository carRepository;
 
     @PostMapping
