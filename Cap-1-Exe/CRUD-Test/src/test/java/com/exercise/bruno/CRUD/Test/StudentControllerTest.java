@@ -86,7 +86,7 @@ class StudentControllerTest {
 	}
 
 	@Test
-	void createUser() throws Exception {
+	void createStudent() throws Exception {
 		Student student = new Student();
 		student.setName("Bruno");
 		student.setSurname("Orlandi");
@@ -106,7 +106,7 @@ class StudentControllerTest {
 	}
 
 	@Test
-	void readeUser() throws Exception {
+	void readeStudent() throws Exception {
 		createAStudent();
 
 		MvcResult result = this.mockMvc.perform(get("/v1/student/list"))
@@ -121,7 +121,7 @@ class StudentControllerTest {
 	}
 
 	@Test
-	void readeUserID() throws Exception {
+	void readeStudentID() throws Exception {
 		Student student =createStudentNew();
 		assertThat(student.getId()).isNotNull();
 
@@ -138,7 +138,7 @@ class StudentControllerTest {
 
 
 	@Test
-	void updateUser() throws Exception{
+	void updateStudent() throws Exception{
 		Student student =createStudentNew();
 		assertThat(student.getId()).isNotNull();
 
@@ -169,7 +169,7 @@ class StudentControllerTest {
 
 
 	@Test
-	void deleteUser() throws Exception{
+	void deleteStudent() throws Exception{
 		Student student =createStudentNew();
 		assertThat(student.getId()).isNotNull();
 
