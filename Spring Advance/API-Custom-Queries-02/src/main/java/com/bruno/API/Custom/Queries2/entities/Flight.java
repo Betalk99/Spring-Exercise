@@ -5,11 +5,27 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @Table
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+
+
+
+@NamedNativeQueries({
+        @NamedNativeQuery(
+                name = "Flight.findFlights",
+                query = "SELECT * FROM Flight ",
+                resultClass = Flight.class
+
+        )
+})
+
+
+
+
 public class Flight {
 
     @Id

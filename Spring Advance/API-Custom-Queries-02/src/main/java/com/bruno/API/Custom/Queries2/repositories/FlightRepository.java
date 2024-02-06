@@ -15,8 +15,8 @@ import java.util.List;
 @Repository
 public interface FlightRepository extends JpaRepository<Flight, Long> {
 
-    @Query(value = "SELECT * FROM Flight ", nativeQuery = true)
-    public List<Flight> findFlights();
+//    @Query(value = "SELECT * FROM Flight ", nativeQuery = true)
+    List<Flight> findFlights();
 
     @Query(value = "SELECT * FROM Flight ", nativeQuery = true)
     Page<Flight> findAllPaged(Pageable pageable);
@@ -24,12 +24,14 @@ public interface FlightRepository extends JpaRepository<Flight, Long> {
     @Query(value = "SELECT * FROM Flight WHERE status = :#{#status.toString()}", nativeQuery = true)
     List<Flight> findOnTimeFlights(@Param("status") Status statuto);
 
-    @Query(value = "SELECT * FROM Flight WHERE status = :#{#statuto.toString()} OR status = :#{#statuss.toString()}", nativeQuery = true)
-    List<Flight> findDelayedOrCancelledFlights(@Param("statuto") Status statuto, @Param("statuss") Status status1);
+    @Query(value = "SELECT * FROM Flight WHERE status = :#{#madonna.toString()} OR status = :#{#statuss.toString()}", nativeQuery = true)
+    List<Flight> findDelayedOrCancelledFlights(@Param("madonna") Status statuto, @Param("statuss") Status status1);
 
-    @Query(value = "SELECT * FROM Flight AS f WHERE f.status :#{#statuto.toString()} OR f.status = :#{#statuss.toString()}", nativeQuery = true)
-    List<Flight> findCustomStatusFlights(@Param("statuto") Status statuto, @Param("statuss") Status status1);
+    @Query(value = "SELECT * FROM flight AS f WHERE f.status = :statuto OR f.status = :statuss", nativeQuery = true)
+    List<Flight> findCustomStatusFlights(@Param("statuto") String statuto, @Param("statuss") String status1);
 
+    @Query(value = "SELECT * FROM Flight AS f WHERE f.description LIKE '%:desc%'", nativeQuery = true)
+    List<Flight> findFlightsByDescription(@Param("desc") String descriptionToSearch);
 
 
 }

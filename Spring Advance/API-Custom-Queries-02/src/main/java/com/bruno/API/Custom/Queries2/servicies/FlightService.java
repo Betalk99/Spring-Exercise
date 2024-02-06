@@ -66,7 +66,7 @@ public class FlightService {
 
 
     public List<Flight> getCustomStatusFlights(Status p1, Status p2) {
-        return flightRepository.findCustomStatusFlights(p1, p2);
+        return flightRepository.findCustomStatusFlights(p1.name().toString(), p2.name().toString());
     }
 
 
