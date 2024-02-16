@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.bruno</groupId>
 	<artifactId>Deploy-Environments-Variables-02</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2</version>
 	<name>Deploy-Environments-Variables-02</name>
 	<description>Deploy - Environments Variables 02 exercise</description>
 	<properties>
